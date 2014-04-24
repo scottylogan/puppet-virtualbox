@@ -11,10 +11,10 @@ class virtualbox {
     refreshonly => true,
   }
 
-  package { 'VirtualBox-4.3.8-92456':
+  package { 'VirtualBox-4.3.10-93012':
     ensure   => installed,
     provider => 'pkgdmg',
-    source   => 'http://download.virtualbox.org/virtualbox/4.3.8/VirtualBox-4.3.8-92456-OSX.dmg',
+    source   => 'http://download.virtualbox.org/virtualbox/4.3.8/VirtualBox-4.3.10-93012-OSX.dmg',
     require  => Exec['Kill Virtual Box Processes'],
   }
 }
