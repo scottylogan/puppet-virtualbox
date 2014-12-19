@@ -4,8 +4,8 @@
 #
 #   include virtualbox
 class virtualbox (
-  $version = '4.3.16',
-  $patch_level = '95972'
+  $version = '4.3.20',
+  $patch_level = '96996'
 ) {
 
   exec { 'Kill Virtual Box Processes':
