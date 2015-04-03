@@ -1,0 +1,25 @@
+{
+  "name": "puppet-virtualbox",
+  "version": "1.0.16",
+  "author": "Scotty Logan",
+  "summary": "Installs VirtualBox and VirtualBox Extensions",
+  "license": "Apache 2.0",
+  "source": "git://github.com/scottylogan/puppet-virtualbox.git",
+  "project_page": "http://github.com/scottylogan/puppet-virtualbox",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Darwin",
+    }
+  ],
+  "description": "VirtualBox module",
+  "dependencies": [
+    {
+      "name":                "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0"
+    },
+    {
+      "name":                 "maestrodev/wget",
+      "version_requirements": ">=1.6.0"
+    }
+  ]
+}
