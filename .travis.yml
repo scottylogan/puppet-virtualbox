@@ -1,5 +1,5 @@
 ---
-script: "./script/cibuild"
+script: "rake spec"
 gemfile: "this/does/not/exist"
 rvm:
   - "1.8.7"
