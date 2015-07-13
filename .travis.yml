@@ -1,5 +1,5 @@
 ---
-script: "rake spec"
-gemfile: "this/does/not/exist"
+sudo: false
+script: "rake lvs"
 rvm:
   - "2.0.0"
