@@ -16,4 +16,10 @@ describe 'virtualbox' do
       :require  => 'Exec[Kill Virtual Box Processes]',
     })
   end
+  it do
+    should contain_exec('Install ExtPack').with({
+      :command  => "/usr/bin/VBoxManage extpack install --replace /tmp/extpack-5.0.0-101573.box-extpack",
+      :require  => 'Package[VirtualBox-5.0.0-101573]',
+    })
+  end
 end
