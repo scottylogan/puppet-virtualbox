@@ -5,8 +5,8 @@
 #   include virtualbox
 
 class virtualbox (
-  $version = '4.3.28',
-  $patch_level = '100309',
+  $version = '5.0.0',
+  $patch_level = '101573',
 ) {
 
   include wget
