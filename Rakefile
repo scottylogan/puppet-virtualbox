@@ -1,8 +1,9 @@
-require 'rubygems'
-require 'puppetlabs_spec_helper/rake_tasks'
+require 'rake'
+require 'rspec/core/rake_task'
 require 'puppet-lint/tasks/puppet-lint'
-PuppetLint.configuration.send('disable_80chars')
-PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "pkg/**/*.pp"]
+require 'puppetlabs_spec_helper/rake_tasks'
+
+PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "vendor/**/*.pp"]
 
 desc "Validate manifests, templates, and ruby files"
 task :validate do
@@ -17,3 +18,7 @@ task :validate do
   end
 end
 
+
+
+desc "Run lint, validate and spec"
+task :lvs => [:lint, :validate, :spec]
