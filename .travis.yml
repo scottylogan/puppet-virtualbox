@@ -1,5 +1,5 @@
 ---
 sudo: false
-script: "rake lvs"
+script: "bundle exec rake lvs"
 rvm:
   - "2.0.0"
