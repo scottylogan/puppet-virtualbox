@@ -11,12 +11,19 @@ class virtualbox (
 
   include wget
 
-  $download = "http://download.virtualbox.org/virtualbox/${version}"
-  $verpl    = "${version}-${patch_level}"
-  $extpath  = "/tmp/extpack-${verpl}.box-extpack"
+  $download     = "http://download.virtualbox.org/virtualbox/${version}"
+  $verpl        = "${version}-${patch_level}"
+  $extpath      = "/tmp/extpack-${verpl}.box-extpack"
+  $extpack_name = 'Oracle_VM_VirtualBox_Extension_Pack'
+  $killcmds     = [
+    'pkill "VBoxXPCOMIPCD" || true',
+    'pkill "VBoxSVC" || true',
+    'pkill "VBoxHeadless" || true'
+  ]
+  $killcmd      = join($killcmds, ' && ')
 
   exec { 'Kill Virtual Box Processes':
-    command     => 'pkill "VBoxXPCOMIPCD" || true && pkill "VBoxSVC" || true && pkill "VBoxHeadless" || true',
+    command     => $killcmd,
     path        => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
     refreshonly => true,
   }
@@ -29,7 +36,7 @@ class virtualbox (
   }
 
   wget::fetch { 'Download ExtPack':
-    source      => "${download}/Oracle_VM_VirtualBox_Extension_Pack-${verpl}.vbox-extpack",
+    source      => "${download}/${extpack_name}-${verpl}.vbox-extpack",
     destination => $extpath,
     timeout     => 0,
     verbose     => false,
