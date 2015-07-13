@@ -8,7 +8,7 @@
   "project_page": "http://github.com/scottylogan/puppet-virtualbox",
   "operatingsystem_support": [
     {
-      "operatingsystem": "Darwin",
+      "operatingsystem": "Darwin"
     }
   ],
   "description": "VirtualBox module",
