@@ -15,6 +15,7 @@ class virtualbox (
   $verpl        = "${version}-${patch_level}"
   $extpath      = "/tmp/extpack-${verpl}.box-extpack"
   $extpack_name = 'Oracle_VM_VirtualBox_Extension_Pack'
+  $vboxmanage   = '/Applications/VirtualBox.app/Contents/MacOS/VBoxManage'
   $killcmds     = [
     'pkill "VBoxXPCOMIPCD" || true',
     'pkill "VBoxSVC" || true',
@@ -45,7 +46,7 @@ class virtualbox (
 
   exec { 'Install ExtPack':
     require     => Package["VirtualBox-${verpl}"],
-    command     => "/usr/bin/VBoxManage extpack install --replace ${extpath}",
+    command     => "${vboxmanage} extpack install --replace ${extpath}",
     refreshonly => true,
   }
 
