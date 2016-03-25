@@ -1,6 +1,6 @@
 {
   "name": "puppet-virtualbox",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "Scotty Logan",
   "summary": "Installs VirtualBox and VirtualBox Extensions",
   "license": "Apache 2.0",
