@@ -9,17 +9,17 @@ describe 'virtualbox' do
     })
   end
   it do
-    should contain_package('VirtualBox-5.0.0-101573').with({
+    should contain_package('VirtualBox-5.0.16-105871').with({
       :ensure   => 'installed',
-      :source   => 'http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-OSX.dmg',
+      :source   => 'http://download.virtualbox.org/virtualbox/5.0.16/VirtualBox-5.0.16-105871-OSX.dmg',
       :provider => 'pkgdmg',
       :require  => 'Exec[Kill Virtual Box Processes]',
     })
   end
   it do
     should contain_exec('Install ExtPack').with({
-      :command  => "/usr/bin/VBoxManage extpack install --replace /tmp/extpack-5.0.0-101573.box-extpack",
-      :require  => 'Package[VirtualBox-5.0.0-101573]',
+      :command  => "/usr/bin/VBoxManage extpack install --replace /tmp/extpack-5.0.16-105871.box-extpack",
+      :require  => 'Package[VirtualBox-5.0.16-105871]',
     })
   end
 end
